@@ -22,7 +22,7 @@ Cell-phone:
 ## LICENCE:
 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+https://raw.githubusercontent.com/Ebay-droid/Angular-IP2/master/LICENSE
 
 ## Running end-to-end tests
 
