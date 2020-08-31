@@ -8,8 +8,8 @@ import { environment } from "../environments/environment";
 export class HttpService {
 
   api = environment.apiKey;
-  username:any
-  repos:any
+  username:string
+ //repos:any
   
 
   constructor( private http:HttpClient) {
@@ -22,11 +22,11 @@ export class HttpService {
   }
 
   getUser(){
-    return this.http.get('https://api.github.com/user' +'?access_token=' + this.api);
+    return this.http.get('https://api.github.com/user' + this.username +'?access_token=' + this.api);
     //console.log('wootS')
   }
 
-  updateUser(username:any){
+  updateUser(username:string){
      this.username= username;
   }
 

@@ -10,7 +10,7 @@ export class ResultComponent implements OnInit {
 
   user: any ;
   repos: any ;
-  username: any
+  username: string
  
   
 
@@ -19,7 +19,7 @@ export class ResultComponent implements OnInit {
    }
    findUser(){
      this.httpService.updateUser(this.username)
-     this.httpService.getUser().subscribe ((response:any)=>{
+     this.httpService.getUser().subscribe (response=>{
       console.log (response)
        this.user = response
       });
