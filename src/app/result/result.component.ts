@@ -10,7 +10,7 @@ export class ResultComponent implements OnInit {
 
   user: any ;
   repos: any ;
-  username: string
+  username: any
  
   
 

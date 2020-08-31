@@ -8,7 +8,7 @@ import { environment } from "../environments/environment";
 export class HttpService {
 
   api = environment.apiKey;
-  username:string
+  username:any;
  //repos:any
   
 
@@ -17,16 +17,16 @@ export class HttpService {
    }
 
   getRepo(){
-    return this.http.get('https://api.github.com/user' + '/repos'+ '?access_token=' + this.api);
+    return this.http.get('https://api.github.com/users/' + this.username +'/repos'+ '?access_token=' + this.api);
   
   }
 
   getUser(){
-    return this.http.get('https://api.github.com/user' + this.username +'?access_token=' + this.api);
+    return this.http.get('https://api.github.com/users/' + this.username +'?access_token=' + this.api);
     //console.log('wootS')
   }
 
-  updateUser(username:string){
+  updateUser(username:any){
      this.username= username;
   }
 

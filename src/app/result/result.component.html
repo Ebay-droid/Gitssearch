@@ -1,7 +1,8 @@
 <div class="container  ">
   <div>
     <form class="form-group" action="">
-      <input class="form-control" type="text" placeholder="Search" [(ngModel)]="username" name="username" (keyup)='findUser()'>
+      <input class="form-control" type="text" placeholder="Search" [(ngModel)]="username" name="username" [(ngModel)]="username" (keyup)='findUser()'>
+      <button class="btn btn-outline-success" (click)='findUser()'>Search</button>
   
     </form>
   
@@ -22,17 +23,18 @@
                   <li class="list-group-item" *ngIf ='user.bio'>{{user.bio}}</li>
                   <li class="list-group-item" *ngIf ='user.email'><a href="{{user.email}}" target="_blank">Email</a></li>
                 </ul>
+                <div class="">
+                  <p>
+                    <span class="badge badge-danger" > Followers: {{user. followers}} </span>
+                    <span class="badge badge-success">Following: {{user. followings}}</span>
+                    <span class="badge badge-warning"> Repositories: {{user. public_repos}}</span>
+          
+                  </p>
+                </div>
               
             </div>
   
-        <div class="">
-          <p>
-            <span class="badge badge-danger" > Followers: {{user. followers}} </span>
-            <span class="badge badge-success">Following: {{user. followings}}</span>
-            <span class="badge badge-warning"> Repositories: {{user. public_repos}}</span>
-  
-          </p>
-        </div>
+ 
       </div>
   
         <div class="card col-md-6">
