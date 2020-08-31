@@ -15,7 +15,7 @@ this web app was created sing the Angular CLI and the Github API
 
 ## contact :
 
-Email:
+Email: gakuoebenezer@gmail.com
 Github:
 Cell-phone:
 
