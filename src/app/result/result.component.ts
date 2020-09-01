@@ -28,6 +28,7 @@ export class ResultComponent implements OnInit {
        this.repos = repos
      });
    }
+   let promise = new Promise((resolve,reject)=>
 
   ngOnInit(): void {
     
