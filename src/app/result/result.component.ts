@@ -9,7 +9,7 @@ import { Component, OnInit, resolveForwardRef } from '@angular/core';
 export class ResultComponent implements OnInit {
 
   user: any ;
-  repos: any ;
+  repos: any [];
   username: any
  
   
@@ -26,7 +26,7 @@ export class ResultComponent implements OnInit {
       });
      this.httpService.getRepo().subscribe(repos=>{
        console .log (repos)
-       this.repos = repos
+       this.repos = [repos]
      });
    
    }
@@ -34,7 +34,7 @@ export class ResultComponent implements OnInit {
     this.httpService.updateUser(this.username);
     this.httpService.getRepo().subscribe(repos=>{
       console .log (repos)
-      this.repos = repos
+      this.repos = [repos]
     });
   
     
