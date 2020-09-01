@@ -6,7 +6,7 @@
       <button class="btn btn-outline-success" (click)='findUser()'>Search</button>
 
       <input class="form-control" type="text" placeholder="Search Repo" [(ngModel)]="repos" name="repos" (keyup)='findRepo()'>
-      <button class="btn btn-outline-success" (click)='findRepo()'>Search</button>
+      <button class="btn btn-outline-primary" (click)='findRepo()'>Search</button>
 
   
     </form>
@@ -52,6 +52,18 @@
   
         </div>
     </div>
+  </div>
+  
+  <div *ngIf ="repos">
+    <div class="card">
+     Name:  {{repos.name}}
+    Description:  {{repos.description}}
+    <p>
+      <span class="badge badge-info">{{repos.forks}}</span>
+    </p>
+
+    </div>
+
   </div>
 
 </div>
