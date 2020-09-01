@@ -6,6 +6,78 @@
 </div>
 
 
+<!-- <div class="container  ">
+  <div class="card">
+    <p>Enter Username below</p>
+    <form class="form-group" action="">
+      <input class="form-control" type="text" placeholder="Search" [(ngModel)]="username" name="username" (keyup)='findUser()'>
+      <button class="btn btn-outline-success" (click)='findUser()'>Search</button>
+
+      <input class="form-control" type="text" placeholder="Search Repo" [(ngModel)]="repos" name="repos" (keyup)='findRepo()'>
+      <button class="btn btn-outline-primary" (click)='findRepo()'>Search</button>
+
+  
+    </form>
+  
+  </div>
+  
+  <div  *ngIf ='user' >
+    <div class="row">
+      <div class="card">
+            <div class="card-title">
+               <b>Name:</b>   {{user.name}} 
+               <b>Login:</b>   {{user.login}} 
+               <b>ID:</b>  {{user.id}}
+            </div>
+            <div class="col-md-6">
+                <img class="img-thumbnail " src="{{user.avatar_url}}" alt="User image">
+                <ul class="list-group">
+                  <li class="list-group-item" *ngIf ='user.company'>Works at, {{user.company}}</li>
+                  <li class="list-group-item" *ngIf ='user.bio'>{{user.bio}}</li>
+                  <li class="list-group-item" *ngIf ='user.email'><a href="{{user.email}}" target="_blank">Email</a></li>
+                </ul>
+                <div class="">
+                  <p>
+                    <span class="badge badge-danger" > Followers: {{user. followers}} </span>
+                    <span class="badge badge-success">Following: {{user. followings}}</span>
+                    <span class="badge badge-warning"> Repositories: {{user. public_repos}}</span>
+          
+                  </p>
+                </div>
+              
+            </div>
+  
+ 
+      </div>
+  
+        <div class="card col-md-6">
+          <h4>Repositories</h4>
+            <div *ngFor ='let repo of repos'>
+              <ul>
+                <li> <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></li>
+              </ul>
+            </div>
+  
+        </div>
+    </div>
+  </div>
+  
+  <div *ngIf ="repos">
+    <div class="card">
+     Name:  {{repos.name}}
+    Description:  {{repos.description}}
+    <p>
+      <span class="badge badge-info">{{repos.forks}}</span>
+    </p>
+
+    </div>
+
+  </div>
+
+</div> -->
+
+
+
 
 
 
