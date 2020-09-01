@@ -2,8 +2,12 @@
   <div class="card">
     <p>Enter Username below</p>
     <form class="form-group" action="">
-      <input class="form-control" type="text" placeholder="Search" [(ngModel)]="username" name="username" [(ngModel)]="username" (keyup)='findUser()'>
+      <input class="form-control" type="text" placeholder="Search" [(ngModel)]="username" name="username" (keyup)='findUser()'>
       <button class="btn btn-outline-success" (click)='findUser()'>Search</button>
+
+      <input class="form-control" type="text" placeholder="Search Repo" [(ngModel)]="repos" name="repos" (keyup)='findRepo()'>
+      <button class="btn btn-outline-success" (click)='findRepo()'>Search</button>
+
   
     </form>
   

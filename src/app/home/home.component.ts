@@ -1,4 +1,8 @@
+import { ResultComponent } from './../result/result.component';
+import { HttpService } from './../http.service';
+import { Repository } from './../repository';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public repoService:HttpService , result:ResultComponent) { }
 
   ngOnInit(): void {
   }

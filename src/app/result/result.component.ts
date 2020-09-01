@@ -1,5 +1,5 @@
 import { HttpService } from './../http.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, resolveForwardRef } from '@angular/core';
 
 @Component({
   selector: 'app-result',
@@ -18,7 +18,8 @@ export class ResultComponent implements OnInit {
     
    }
    findUser(){
-     this.httpService.updateUser(this.username)
+     this.httpService.updateUser(this.username);
+    
      this.httpService.getUser().subscribe (response=>{
       console.log (response)
        this.user = response
@@ -27,11 +28,24 @@ export class ResultComponent implements OnInit {
        console .log (repos)
        this.repos = repos
      });
+   
    }
-   let promise = new Promise((resolve,reject)=>
+   findRepo(){
+    this.httpService.updateUser(this.username);
+    this.httpService.getRepo().subscribe(repos=>{
+      console .log (repos)
+      this.repos = repos
+    });
+  
+    
 
-  ngOnInit(): void {
+   }
+   
+
+  ngOnInit() {
     
   }
 
 }
+
+
