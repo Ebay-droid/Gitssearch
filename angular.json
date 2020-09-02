@@ -85,7 +85,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/_redirects"
             ],
             "styles": [
               "src/styles.css"
@@ -125,4 +126,6 @@
   "cli": {
     "analytics": false
   }
+
+
 }
