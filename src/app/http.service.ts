@@ -36,11 +36,37 @@ export class HttpService {
      }
      return new Promise ((resolve,reject)=>{
        this.http
-       .get<Api>('https://api.github.com/users/'+ searchUser + '?access_token='+ environment.apiKey)
+       .get<Api>('https://api.github.com/users/'+ searchUser + '?access_token='+ this.api)
        .toPromise().then((result)=>{this.user=result;
         console.log(this.user);
-      })
-     })
+        resolve();
+      },
+      (error)=>{
+        console.log (error);
+        reject();
+      });
+     });
+   }
+
+   getRepo(searchUser){
+     interface repoApi{
+       repo_name :string,
+       description:string, 
+       forks:number, 
+       language:string
+     }
+     return new Promise((resolve,reject)=>{
+       this.http
+       .get<repoApi>('https://api.github.com/users/'+ searchUser + '/repos?access_token='+ this.api)
+       .toPromise().then((result)=>{this.repos=result;
+        console.log(this.repos);
+        resolve();
+       },
+       (error)=>{
+         console.log(error);
+         reject();
+       });
+     });
    }
 
   // getRepo(){

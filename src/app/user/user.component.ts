@@ -12,15 +12,28 @@ import { User } from '../user';
 })
 export class UserComponent implements OnInit {
 
-  user: any ;
-  repos: any [];
-  // username: any
+  user: User ;
+  repos: Repository ;
  
 
   constructor(public httpService:HttpService, public repoService :HttpService) { }
 
     find(searchUser){
-      this.httpService.getUser(searchUser).then
+      this.httpService.getUser(searchUser).then(
+        (success)=>{
+          this.user=this.httpService.user;
+        },
+        (error)=>{
+          console.log ("Ooops");
+        });
+
+      this.repoService.getRepo(searchUser).then(
+        (result)=>{
+          this.repos=this.repoService.repos;
+        },
+        (error)=>{
+          console.log("Ooops..Sorry");
+        });  
     }
 
 
@@ -50,6 +63,7 @@ export class UserComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    this.find("Ebay-droid");
   }
 
 }

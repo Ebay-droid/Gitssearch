@@ -1,6 +1,7 @@
 import { HttpService } from '../http.service';
-import { Component, OnInit, resolveForwardRef } from '@angular/core';
-
+import { Component, OnInit, } from '@angular/core';
+import { Repository } from '../repository';
+import { error } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-repo',
   templateUrl: './repo.component.html',
@@ -8,42 +9,50 @@ import { Component, OnInit, resolveForwardRef } from '@angular/core';
 })
 export class RepoComponent implements OnInit {
 
-  user: any ;
-  repos: any [];
-  username: any
+  repos: any ;
  
   
 
-  constructor( private httpService:HttpService) {
-    
-   }
-   findUser(){
-    this.httpService.updateUser(this.username);
-   
-    this.httpService.getUser().subscribe (response=>{
-     console.log (response)
-      this.user = response
-     });
-    this.httpService.getRepo().subscribe(repos=>{
-      console .log (repos)
-      this.repos = [repos]
-    });
-  
+  constructor( public repoService:HttpService) { }
+
+  findRepo(searchUser){
+    this.repoService.getRepo(searchUser).then(
+      (result)=>{
+        this.repos= this.repoService.repos;
+      },
+      (error)=>{
+        console.log("Ooops!!");
+      });
   }
-   findRepo(){
-    this.httpService.updateUser(this.username);
-    this.httpService.getRepo().subscribe(repos=>{
-      console .log (repos)
-      this.repos = [repos]
-    });
+
+
+  //  findUser(){
+  //   this.httpService.updateUser(this.username);
+   
+  //   this.httpService.getUser().subscribe (response=>{
+  //    console.log (response)
+  //     this.user = response
+  //    });
+  //   this.httpService.getRepo().subscribe(repos=>{
+  //     console .log (repos)
+  //     this.repos = [repos]
+  //   });
+  
+  // }
+  //  findRepo(){
+  //   this.httpService.updateUser(this.username);
+  //   this.httpService.getRepo().subscribe(repos=>{
+  //     console .log (repos)
+  //     this.repos = [repos]
+  //   });
   
     
 
-   }
+  //  }
    
 
   ngOnInit() {
-    
+    this.findRepo ("Ebay-droid")
   }
 
 }

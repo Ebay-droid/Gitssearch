@@ -1,4 +1,6 @@
 <div class="container  ">
+
+  <app-search (searchEmmiter)='findRepo($event)'></app-search>
   
   <div *ngIf ="repos">
     <div class="card">
