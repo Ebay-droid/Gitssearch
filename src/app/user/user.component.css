@@ -6,5 +6,6 @@
 .card{
   padding: 20px;
   padding-right: 10px;
-  opacity: 60%;
+  background-color: burlywood;
+  opacity: 0.70;
 }

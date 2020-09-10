@@ -1,5 +1,9 @@
  <div class="container  ">
 
+  <div class="jumbotron">
+    <p>Welcome to GitSearch, an appplication where you can search for github userd in the provided  form and receive their details. The details are displayed by use of the github API which has been intergrated.</p>
+  </div>
+
   <app-search (searchEmmiter)='find($event)'></app-search>
   <div *ngIf ='user' >
     <div class="row">
