@@ -1,27 +1,7 @@
-
-<div class="jumbotron">
-  <h5><b>Welcome!!</b></h5>
-  <p>Welcome to the Gitsearch App where you can search for repositories.</p>
-  <p>Navigate to the users tab and search  for any user on git hub or to the repositories tab to search fr a repo</p>
-</div>
-
-
  <div class="container  ">
-  <div class="card">
-    <p>Enter Username below</p>
-    <form class="form-group" action="">
-      <input class="form-control" type="text" placeholder="Search" [(ngModel)]= "username" name="username" (keyup)='findUser()'>
-      <button class="btn btn-outline-success" (click)="findUser()">Search</button>
-
-      <input class="form-control" type="text" placeholder="Search Repo" [(ngModel)]= "repos" name="repos" (keyup)='findRepo()'>
-      <button class="btn btn-outline-primary" (click)="findRepo()">Search</button>
 
   
-    </form>
-  
-  </div>
-  
-  <div  *ngIf ='user' >
+  <div *ngIf ='user' >
     <div class="row">
       <div class="card">
             <div class="card-title">
@@ -62,18 +42,7 @@
     </div>
   </div>
   
-  <div *ngIf ="repos">
-    <div class="card">
-     Name:  {{repos.name}}
-    Description:  {{repos.description}}
-    <p>
-      <span class="badge badge-info">{{repos.forks}}</span>
-    </p>
-
-    </div>
-
-  </div>
-
+  
 </div> 
  
 

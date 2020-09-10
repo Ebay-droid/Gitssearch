@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ResultComponent } from './result/result.component';
+import { RepoComponent } from './repo/repo.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HomeComponent,
-    ResultComponent
+    UserComponent,
+    RepoComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
