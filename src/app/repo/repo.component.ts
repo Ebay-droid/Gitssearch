@@ -1,7 +1,6 @@
 import { HttpService } from '../http.service';
 import { Component, OnInit, } from '@angular/core';
 import { Repository } from '../repository';
-import { error } from '@angular/compiler/src/util';
 @Component({
   selector: 'app-repo',
   templateUrl: './repo.component.html',
@@ -9,7 +8,7 @@ import { error } from '@angular/compiler/src/util';
 })
 export class RepoComponent implements OnInit {
 
-  repos: any ;
+  repos: Repository ;
  
   
 
